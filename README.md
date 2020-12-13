@@ -1,2 +1,3 @@
 # Literature-Review
-This repository contains paper summaries
+
+This is where summaries of papers on various topics live.

@@ -5,6 +5,10 @@
 
 ### Branch Prediction
 
+- **[Bit-level Perceptron Prediction for Indirect Branches](https://people.engr.tamu.edu/djimenez/pdfs/p27-garza.pdf), Elba Garza, Samira Mirbagher Ajorpaz, Tahsin Ahmad Khan, and Daniel A. Jiménez, ISCA, 2019.**
+
+This work predicts indirect-branch target addresses at the bit level with perceptrons. It extends neural branch prediction beyond the taken/not-taken decision, exploiting correlations between execution history and individual target-address bits.
+
 
 - **Towards a high performance neural branch predictor, Lucian N Vintan and Mihaela Iridon, International Joint Conference on Neural Networks, 1999.**
 
@@ -80,6 +84,10 @@ Later Peled et al. used neural networks to capture semantic locality. Memory acc
 Dai et al. exploited deep learning techniques to propose *Block2Vec* (which is inspired by Word2Vec used in word embeding), which can find out correlations among blocks in storage systems. Such information can be used to predict the next block accesses and used to make prefetching decisions.~They introduced a new vector based representation of blocks which include a number of features that define the block.~The correlation among blocks can be found out by using the distance between block vectors. Block2Vec provides two different models to choose for training purposes. CBOW (Continuous Bag-of-Words) predicts the current block given past and future blocks and Skip-gram model predicts the past and future blocks given the current block. Block2Vec also considers the clossness in time as a feature to impact the training process to determine the block correlations. The Skip-gram model of is shown to have the best next access block prediction accuracy when compared with other accepted methods like PG (Probability Graph) and SP (Sequential Prediction).
 
 ### Cache Line Reuse
+
+- **[Exploring Predictive Replacement Policies for Instruction Cache and Branch Target Buffer](https://people.engr.tamu.edu/djimenez/pdfs/isca2018_dist.pdf), Samira Mirbagher Ajorpaz, Elba Garza, Sangam Jindal, and Daniel A. Jiménez, ISCA, 2018.**
+
+The paper studies predictive replacement in the instruction cache and branch target buffer and introduces Global History Reuse Prediction (GHRP). It uses control-flow history to learn reuse behavior and guide replacement, extending predictive management to processor front-end structures.
 
 - **Neural methods for dynamic branch prediction, Daniel A Jiménez and Calvin Lin, ACM Transactions on Computer Systems (TOCS), 2002.**
 
@@ -286,6 +294,14 @@ They used regression to build application-specific energy-performance tradeoff m
 Wang and Ipek proposed an online data clustering based technique to reduce energy of data transfers in memory. Data interconnects are often designed in such a way that they present asymmetric transmission costs (e.g. cost of transmitting a '0' is much lower than transmitting a '1'). Wang and Ipek propsed a data encoding technique based on clustering techniques that tries to reduce the number of (ones) 1s in the data to minimise its transmission cost. The proposed scheme dyanmically groups "similar data blocks into clusters". Each data block is encoded as an XOR between centre of the nearest cluster and "a sparse residual". Evaluation of the proposed technique for DDR4, LPDDR3 and last level cache indicates energy savings of 5\%., 9\% and 12\% respectively. It is also shown that the proposed technique performs better than "two dimensional bus invert (CAFO) coding, and recent value encoding"
 
 ### Hardware Security
+
+- **[PerSpectron: Detecting Invariant Footprints of Microarchitectural Attacks with Perceptron](https://people.engr.tamu.edu/djimenez/pdfs/PerSpectron_Micro2020_camera.pdf), Mirbagher Ajorpaz et al., MICRO, 2020.**
+
+PerSpectron applies perceptron learning to microarchitectural activity to detect attack footprints. It uses hardware-level observations rather than relying only on software-visible performance counters, connecting lightweight learning with microarchitectural attack detection.
+
+- **[EVAX: Towards a Practical, Pro-active & Adaptive Architecture for High Performance & Security](https://doi.org/10.1109/MICRO56248.2022.00085), Mirbagher Ajorpaz et al., MICRO, 2022.**
+
+EVAX combines learning-based attack detection with adaptive microarchitectural defense. Its adversarial generative modeling supplies attack examples for training, connecting generative machine learning with security-oriented hardware adaptation.
 
 - **Meltem Ozsoy, Khaled N Khasawneh, Caleb Donovick, Iakov Gorelik, Nael Abu-Ghazaleh, and Dmitry Ponomarev. 2016. Hardware-Based Malware Detection Using Low-Level Architectural Features. IEEE Trans. Comput. 65, 11 (2016), 3332–3344.**
 
